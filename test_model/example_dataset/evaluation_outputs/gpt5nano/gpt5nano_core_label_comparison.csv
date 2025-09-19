@@ -1,0 +1,6 @@
+image_id,lab_type_gt,lab_type_pred,lab_points,is_safe_gt,is_safe_pred,safety_points,categories_gt,categories_pred,cat_precision,cat_recall,cat_f1,cat_points
+image0047,chem,bio,0,True,True,2,PPE,PPE,1.0,1.0,1.0,1.0
+image0447,bio,bio,1,False,False,2,PPE;SOP,PPE;WO,0.5,0.5,0.5,0.3333333333333333
+image0804,chem,chem,1,False,False,2,PPE;SOP;WO,PPE;WO,1.0,0.6666666666666666,0.8,0.6666666666666666
+image1226,bio,bio,1,True,True,2,SOP,PPE;WO;SOP,0.3333333333333333,1.0,0.5,0.3333333333333333
+image1414,ee,ee,1,True,True,2,PPE;WO,PPE;WO,1.0,1.0,1.0,1.0

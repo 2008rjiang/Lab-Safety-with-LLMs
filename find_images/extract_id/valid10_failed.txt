@@ -1,0 +1,12 @@
+14	https://images1.westend61.de/0001142288g/teacher-and-middle-school-students-conducting-scientific-experiment-in-science-laboratory-HEROF23216.jpg	402 Client Error: Payment Required for url: https://images1.westend61.de/0001142288g/teacher-and-middle-school-students-conducting-scientific-experiment-in-science-laboratory-HEROF23216.jpg
+57	http://image.made-in-china.com/2f1j00uSmQkptIhWbs/School-Laboratory-Furniture-Chemical-Lab-Furniture.jpg	403 Client Error: Forbidden for url: http://image.made-in-china.com/2f1j00uSmQkptIhWbs/School-Laboratory-Furniture-Chemical-Lab-Furniture.jpg
+87	http://researcharticles.com/wp-content/uploads/2019/03/14142420422_aaccc1a489_c-310x165.jpg	Not an image: text/html; charset=UTF-8
+88	https://www.prashantthakur.in/wp-content/uploads/2013/02/Bioanalytical-Lab-190x150.jpg	406 Client Error: Not Acceptable for url: https://www.prashantthakur.in/wp-content/uploads/2013/02/Bioanalytical-Lab-190x150.jpg
+108	http://www.academyofscienceforkids.com/image/cache/data/628318-120x120.png	Not an image: text/html
+120	https://www.nsf.gov/news/mmg/media/images/algaelab2-13(14)_a9170492-e990-41f7-9b28-e29170a68c60_r.jpg	Not an image: text/html; charset=UTF-8
+141	https://www.academyofscienceforkids.com/image/cache/data/635213-120x120.png	Not an image: text/html
+143	https://image.made-in-china.com/43f34j00KspQDiVyZjqa/Good-Quality-School-Chemistry-Lab-Furniture.jpg	403 Client Error: Forbidden for url: https://image.made-in-china.com/43f34j00KspQDiVyZjqa/Good-Quality-School-Chemistry-Lab-Furniture.jpg
+144	https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Rc01122.jpg/180px-Rc01122.jpg	403 Client Error: Forbidden. Please comply with the User-Agent policy: https://meta.wikimedia.org/wiki/User-Agent_policy for url: https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Rc01122.jpg/180px-Rc01122.jpg
+146	https://www.teachforhk.org/wp-content/uploads/2020/09/Lab-Management-324x160.jpg	Not an image: text/html
+151	https://clipartion.com/wp-content/uploads/2016/04/science-lab-tools.jpeg	Not an image: text/html; charset=utf-8
+156	https://sergioandradeadvogados.com.br/wp-content/uploads/2016/02/laboratorio-trabalhadores-180x180.jpg	('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
