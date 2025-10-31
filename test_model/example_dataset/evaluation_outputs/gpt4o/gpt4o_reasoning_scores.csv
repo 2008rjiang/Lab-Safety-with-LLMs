@@ -1,6 +1,0 @@
-image_id,reasoning_points,rubric_level,score_explanation
-image0047,3,Adequate,"GT rationale is absent (typical for SAFE), so there are no specific drivers to match. The prediction suggests safety via PPE in a biological lab, which plausibly aligns with a SAFE label, but the lab type and specific PPE details cannot be verified against GT. No contradictions, but limited confirmable overlap."
-image0447,3,Adequate,"Correctly identifies improper footwear (high heels) aligning with GT, but omits the key GT detail of loose hair and adds an unsupported claim about workspace clutter, which isn’t in the GT."
-image0804,3,Adequate,"Correctly flags missing eye protection (PPE) and implies chemical context/unsafe, but omits the GT driver of missing gloves and adds ungrounded hazards (clutter/improper storage). Partial alignment with PPE category; extra SOP/WO claims not in GT."
-image1226,4,Strong,"GT has no details (implies SAFE). The model’s reasoning supports safety with specific PPE (gloves, lab coats) and organized workspace, with no contradictions. Somewhat generic and no lab type noted, so not exceptional."
-image1414,0,Incorrect/Misleading,"GT has no details (implying SAFE); the model invents PPE and workspace-organization issues and implies unsafe conditions, contradicting the implied safe label with hallucinated hazards."
