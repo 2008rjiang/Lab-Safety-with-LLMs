@@ -1,2 +1,9 @@
 testing_dataset/test_images/*
 training_dataset/*
+
+find_images/*
+retrieve_images_excel/*
+sort_dataset/*
+test_model/*
+testing_dataset/*
+training_dataset/*

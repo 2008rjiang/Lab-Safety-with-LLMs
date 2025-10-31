@@ -1,5 +1,5 @@
 '''
-find_lab_images_parquet_perf.py
+find_lab_images.py
 
 Optimized scan of LAION-400M Parquet using PyArrow dataset for chunked reads,
 arrow-level substring filtering via compute.match_substring, and CLIP embedding.
