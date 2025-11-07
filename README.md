@@ -37,12 +37,10 @@ Splits were generated using stratified sampling to preserve distribution across:
 Each entry includes a structured label schema and reasoning text.  
 Below are two representative examples:
 
-| Image | Lab Type | Unsafe | Category | Description |
-|:--|:--|:--|:--|:--|
-| ![Example 1](examples/image0070.jpg) | Biology | 0 | PPE | “Individual wears mask, gloves, and gown; workspace organized and sterile — no evident hazards.” |
-| ![Example 2](examples/image1267.jpg) | Chemistry | 1 | SOP | “Missing gloves; distillation running in open air; unsafe proximity to apparatus — overall unsafe.” |
-
-(Images shown here are sample thumbnails; full dataset images are excluded for licensing reasons.)
+| Image | Category | Lab Type | Unsafe | Details | GPT Reason |
+|:--|:--|:--|:--|:--|:--|
+| ![Example 1](testing_dataset/test_images/image0070.jpg) | PPE | Biology | 0 | - | “This image shows a biology lab, where the individual is appropriately attired in PPE including a hair cover, mask, gloves, and protective gown, suggesting a sterile work process. The workspace appears organized and clean, and no safety concerns are evident, making this a safe laboratory scene.” 
+| ![Example 2](testing_dataset/test_images/image1267.jpg) | SOP | Chemistry | 1 | “no gloves, distillation setup on open bench, close prosimity to apparatus, wristwatch worn” | “This is clearly a chemistry laboratory scene, but it is not fully safe: essential hand protection is missing, a heated distillation is running in open lab air, and the worker is positioned unsafely close to the apparatus while wearing a wristwatch. These factors together render the overall setup unsafe despite the presence of lab coats and goggles.”
 
 ---
 
@@ -99,6 +97,7 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 *Image:* Biology lab with clean workspace.  
 - All models classified as safe.  
 - GPT-4o-mini added an unnecessary “missing goggles” warning (false positive).  
+
 
 
 
