@@ -77,12 +77,12 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 
 | Model | Safety Acc. | Lab-Type Acc. | Category Match | Category F1 |
 |:--|:--:|:--:|:--:|:--:|
-
 | GPT-4o | 0.663 | 0.850 | 0.644 | 0.740 |
 | GPT-5-nano | 0.637 | 0.840 | 0.642 | 0.748 | 
 | GPT-5-mini | 0.697  | 0.830  | 0.603  | 0.703 |
 | GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
 | Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
+
 
 
 
