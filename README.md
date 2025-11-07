@@ -1,4 +1,4 @@
-#Laboratory Safety Dataset and Multimodal Evaluation Framework
+# Laboratory Safety Dataset and Multimodal Evaluation Framework
 
 This repository contains code, data samples, and evaluation scripts from our study:  
 “Evaluating Multimodal Large Language Models for Real-World Laboratory Safety Reasoning.”
@@ -30,8 +30,6 @@ Splits were generated using stratified sampling to preserve distribution across:
 - Laboratory domain (`biology`, `chemistry`, `ee`)
 - Violation category (`ppe`, `sop`, `wo`)
 
-Random seed fixed at `42` for reproducibility.
-
 ---
 
 ## Annotation Examples
@@ -56,19 +54,21 @@ Each model was prompted with the following evaluation instruction:
 
 ### Models Evaluated
 
-| Model | Type | Year | Vision Encoder |
-|:--|:--|:--:|:--|
-| GPT-4o | Proprietary | 2024 | Internal |
-| GPT-4o-mini | Proprietary | 2024 | Internal |
-| GPT-5-nano | Proprietary | 2025 | Internal |
-| Qwen2.5-VL | Open-weight | 2025 | ViT-G |
-| LLaVA-1.6 | Open-weight | 2024 | CLIP-L/14 |
+| Model | Type | Provider |
+|:--|:--|:--|
+| GPT-4o | Vision-language foundation model | OpenAI |
+| GPT-5-nano | Lightweight multimodal variant | OpenAI |
+| GPT-5-mini | Compact multimodal variant | OpenAI |
+| GPT-o4-mini | Instruction-tuned image model | OpenAI |
+| Qwen2.5-VL | Open-source vision-language model | Alibaba Group |
 
-Each model’s predictions were evaluated along three axes:
+Each model’s predictions were evaluated along five axes:
 
-1. **Hazard Detection Accuracy (HDA)** — correctness of safe/unsafe classification  
-2. **Violation Categorization (VC)** — accuracy of predicting the correct category (PPE, SOP, WO)  
-3. **Reasoning Fidelity (RF)** — factual consistency and absence of hallucinated violations  
+1. **Lab-Type Accuracy** — Exact match between predicted and ground-truth lab domain (bio, chem, ee) 
+2. **Hazard-Category Exact Match** — 1 if predicted = ground-truth set {PPE,SOP,WO}; 0 otherwise
+3. **Category Precision / Recall / F1** — Computed over the three safety-violation types & Partial-credit overlap scoring
+4. **Safety Accuracy** — Agreement on overall safe / unsafe decision
+5. **Reasoning Quality (0–5)** — GPT-5 rubric-based judgment of factual and conceptual alignment 
 
 Evaluation was performed using **GPT-5 as a reference grader**, following a two-stage pipeline:  
 (1) generation → (2) LLM-based structured evaluation.
@@ -77,13 +77,15 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 
 ## Results Summary
 
-| Model | HDA (↑) | VC (↑) | RF (↑) | Notes |
-|:--|:--:|:--:|:--:|:--|
-| GPT-5-nano | **89.7%** | **85.1%** | **91.2%** | Most balanced reasoning and low hallucination rate |
-| GPT-4o | 84.5% | 80.6% | 87.0% | Occasional overconfidence on ambiguous images |
-| GPT-4o-mini | 79.3% | 76.8% | 81.4% | Reasonable detection but frequent omission errors |
-| Qwen2.5-VL | 71.2% | 68.4% | 73.5% | Struggles with multi-object reasoning |
-| LLaVA-1.6 | 67.9% | 61.7% | 65.8% | High hallucination rate; poor fine-grained detection |
+| Model | Safety Acc. | Lab-Type Acc. | Category Match | Category F1 |
+|:--|:--:|:--:|:--:|:--:|
+
+| GPT-4o | 0.663 | 0.850 | 0.644 | 0.740 |
+| GPT-5-nano | 0.637 | 0.840 | 0.642 | 0.748 | 
+| GPT-5-mini | 0.697  |0.830  |0.603  |0.703 |
+| GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
+| Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
+
 
 ### Qualitative Case Studies
 
@@ -98,4 +100,5 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 - All models classified as safe.  
 - GPT-4o-mini added an unnecessary “missing goggles” warning (false positive).  
 
----
+
+
