@@ -80,23 +80,11 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 
 | GPT-4o | 0.663 | 0.850 | 0.644 | 0.740 |
 | GPT-5-nano | 0.637 | 0.840 | 0.642 | 0.748 | 
-| GPT-5-mini | 0.697  |0.830  |0.603  |0.703 |
+| GPT-5-mini | 0.697  | 0.830  | 0.603  | 0.703 |
 | GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
 | Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
 
 
-### Qualitative Case Studies
-
-**Example 1:**  
-*Image:* Chemistry lab with open heating mantle and missing gloves.  
-- GPT-4o correctly flagged missing gloves but ignored exposed flask.  
-- Qwen2.5-VL hallucinated “smoke” and incorrectly labeled it as fire hazard.  
-- GPT-5-nano identified both violations and recommended procedural correction.
-
-**Example 2:**  
-*Image:* Biology lab with clean workspace.  
-- All models classified as safe.  
-- GPT-4o-mini added an unnecessary “missing goggles” warning (false positive).  
 
 
 
