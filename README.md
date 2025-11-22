@@ -1,6 +1,6 @@
 # Laboratory Safety Dataset and Multimodal Evaluation Framework
 
-This repository contains code, data samples, and evaluation scripts from our study:  
+This repository contains the data samples from our study:  
 “Evaluating Multimodal Large Language Models for Real-World Laboratory Safety Reasoning.”
 
 The project introduces the first large-scale dataset of authentic laboratory images annotated for safety compliance, laboratory type, and violation categories. It further benchmarks a range of multimodal large language models (MLLMs) in hazard detection and reasoning fidelity.
@@ -82,6 +82,7 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 | GPT-5-mini | 0.697  | 0.830  | 0.603  | 0.703 |
 | GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
 | Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
+
 
 
 
