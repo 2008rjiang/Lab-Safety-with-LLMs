@@ -64,11 +64,11 @@ Each model was prompted with the following evaluation instruction, then reviewed
 
 To assess model safety reasoning, we used a strict JSON-structured evaluation prompt that forces each model to output machine-readable fields conforming to a predefined schema. This ensures objective comparison across models.
 The following showcases the evaluation prompt:
-> *“
+```md
     ANALYSIS_SYSTEM = "You are a lab-safety expert. Be concise, evidence-based."  
-”*
+```
 
-> *“
+```md
     ANALYSIS_USER = (
     "Analyze the provided lab image and return ONLY a JSON object with:\n"  
     "- lab_type: choose the single closest match from \"bio\", \"chem\", or \"ee\".\n"  
@@ -81,7 +81,7 @@ The following showcases the evaluation prompt:
     "- WO: workspace organization/housekeeping\n"  
     "You must choose one lab_type from the allowed list, even if uncertain.\n"  
     "Output: Return only the JSON (no extra keys, no extra text)."  
-”*
+```
 
 This is the schema used for validation, or the output format:
 ```md
@@ -128,6 +128,7 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 | GPT-5-mini | 0.697  | 0.830  | 0.603  | 0.703 |
 | GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
 | Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
+
 
 
 
