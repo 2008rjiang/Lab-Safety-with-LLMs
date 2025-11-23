@@ -44,9 +44,9 @@ Below are two representative examples:
 
 ---
 
-## Evaluation Framework
+## Evaluation Labels
 
-Each model was prompted with the following evaluation instruction:
+Each model was prompted with the following evaluation instruction, then reviewed by human experts for label creation:
 
 > *“You are a laboratory safety expert. Analyze the image carefully and list all visible safety violations. Provide reasoning for each and conclude whether the lab scene is safe or unsafe.”*
 
@@ -60,7 +60,53 @@ Each model was prompted with the following evaluation instruction:
 | GPT-o4-mini | Instruction-tuned image model | OpenAI |
 | Qwen2.5-VL | Open-source vision-language model | Alibaba Group |
 
-Each model’s predictions were evaluated along five axes:
+### Model Response Evaluation 
+
+To assess model safety reasoning, we used a strict JSON-structured evaluation prompt that forces each model to output machine-readable fields conforming to a predefined schema. This ensures objective comparison across models.
+The following showcases the evaluation prompt:
+> *“
+    ANALYSIS_SYSTEM = "You are a lab-safety expert. Be concise, evidence-based."
+”*
+
+> *“
+    ANALYSIS_USER = (
+    "Analyze the provided lab image and return ONLY a JSON object with:\n"
+    "- lab_type: choose the single closest match from \"bio\", \"chem\", or \"ee\".\n"
+    "- is_safe: boolean overall verdict (true/false)\n"
+    "- categories: array with any of [\"PPE\", \"SOP\", \"WO\"] visibly relevant\n"
+    "- reasoning: 1-4 sentences citing concrete, visible cues (no boilerplate)\n"
+    "Definitions:\n"
+    "- PPE: personal protective equipment\n"
+    "- SOP: procedural practices (chemical/biological/electrical handling)\n"
+    "- WO: workspace organization/housekeeping\n"
+    "You must choose one lab_type from the allowed list, even if uncertain.\n"
+    "Output: Return only the JSON (no extra keys, no extra text)."
+”*
+
+This is the schema used for validation, or the output format:
+> *“
+SCHEMA = {
+    "name": "lab_assessment",
+    "schema": {
+        "type": "object",
+        "properties": {
+            "lab_type":   {"type": "string", "enum": ["bio","chem","ee"]},
+            "is_safe":    {"type": "boolean"},
+            "categories": {
+                "type": "array",
+                "items": {"type": "string", "enum": ["PPE","SOP","WO"]}
+            },
+            "reasoning":  {"type": "string"}
+        },
+        "required": ["lab_type","is_safe","categories","reasoning"],
+        "additionalProperties": False
+    },
+    "strict": True
+}
+> ”*
+
+
+Each model’s predictions were later evaluated along five axes:
 
 1. **Lab-Type Accuracy** — Exact match between predicted and ground-truth lab domain (bio, chem, ee) 
 2. **Hazard-Category Exact Match** — 1 if predicted = ground-truth set {PPE,SOP,WO}; 0 otherwise
@@ -82,6 +128,7 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 | GPT-5-mini | 0.697  | 0.830  | 0.603  | 0.703 |
 | GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
 | Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
+
 
 
 
