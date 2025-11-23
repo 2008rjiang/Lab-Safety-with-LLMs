@@ -48,9 +48,9 @@ Below are two representative examples:
 
 Each model was prompted with the following evaluation instruction, then reviewed by human experts for label creation:
 
-```md
+> *“
 “You are a laboratory safety expert. Analyze the image carefully and list all visible safety violations. Provide reasoning for each and conclude whether the lab scene is safe or unsafe.
-```
+> “*
 
 ### Models Evaluated
 
@@ -130,6 +130,7 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 | GPT-5-mini | 0.697  | 0.830  | 0.603  | 0.703 |
 | GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
 | Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
+
 
 
 
