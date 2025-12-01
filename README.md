@@ -22,7 +22,7 @@ Each image is annotated with structured metadata capturing:
 
 | Subset | # Images | Safe | Unsafe | Description |
 |:--|--:|--:|--:|:--|
-| Train | 1,178 | 605 | 571 | Used for model fine-tuning and prompt optimization |
+| Train | 1,178 | 605 | 573 | Used for model fine-tuning and prompt optimization |
 | Test | 300 | 153 | 147 | Reserved for benchmarking; high-certainty labels only |
 
 Splits were generated using stratified sampling to preserve distribution across:
@@ -130,6 +130,7 @@ Evaluation was performed using **GPT-5 as a reference grader**, following a two-
 | GPT-5-mini | 0.697  | 0.830  | 0.603  | 0.703 |
 | GPT-o4-mini | 0.627 | 0.803 | 0.624 | 0.725 | 
 | Qwen2.5-VL | 0.503 | 0.737 | 0.449 | 0.550 | 
+
 
 
 
