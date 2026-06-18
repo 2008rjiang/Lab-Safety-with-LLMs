@@ -37,7 +37,7 @@ Splits were generated using stratified sampling to preserve distribution across:
 Each entry includes a structured label schema and reasoning text.  
 Below are two representative examples:
 
-| Image | Category | Lab Type | Unsafe | Details | GPT Reason |
+| Image | Category | Lab Type | Unsafe | Details | Annotation Rationale |
 |:--|:--|:--|:--|:--|:--|
 | ![Example 1](training_dataset/train_images/image0070.jpg) | PPE | Biology | 0 | - | “This image shows a biology lab, where the individual is appropriately attired in PPE including a hair cover, mask, gloves, and protective gown, suggesting a sterile work process. The workspace appears organized and clean, and no safety concerns are evident, making this a safe laboratory scene.” 
 | ![Example 2](training_dataset/train_images/image1267.jpg) | SOP | Chemistry | 1 | “no gloves, distillation setup on open bench, close prosimity to apparatus, wristwatch worn” | “This is clearly a chemistry laboratory scene, but it is not fully safe: essential hand protection is missing, a heated distillation is running in open lab air, and the worker is positioned unsafely close to the apparatus while wearing a wristwatch. These factors together render the overall setup unsafe despite the presence of lab coats and goggles.”
