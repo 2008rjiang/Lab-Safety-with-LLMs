@@ -16,7 +16,7 @@ Each image is annotated with structured metadata capturing:
 - **`unsafe`**: Binary safety label (0 = safe, 1 = unsafe)
 - **`category`**: Violation type (`PPE`, `SOP`, or `WO`)
 - **`details`**: Human-readable description of violations
-- **`gpt_reason`**: Expert-style textual reasoning generated via LLM prompts
+- **`annotation_rationale`**: Expert-style textual reasoning generated via LLM prompts
 
 ### Dataset Split
 
