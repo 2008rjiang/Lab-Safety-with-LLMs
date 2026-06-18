@@ -3,7 +3,7 @@
 This repository contains the data samples from our study:  
 “Evaluating Multimodal Large Language Models for Real-World Laboratory Safety Reasoning.”
 
-The project introduces the first large-scale dataset of authentic laboratory images annotated for safety compliance, laboratory type, and violation categories. It further benchmarks a range of multimodal large language models (MLLMs) in hazard detection and reasoning fidelity.
+The project was conducted during a research internship at the Duke CEI Center and introduces the first large-scale dataset of authentic laboratory images annotated for safety compliance, laboratory type, and violation categories. All annotations were created and reviewed under human supervision to ensure consistency and quality. The dataset further enables benchmarking of a range of multimodal large language models (MLLMs) on laboratory hazard detection, classification, and reasoning fidelity.
 
 ---
 
